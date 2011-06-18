@@ -7,4 +7,5 @@
 ,   "dependencies":     { "packet":"= 0.0.2" }
 ,   "directories":      { "lib" : "./lib" }
 ,   "main":             "./lib/lwes"
+,   "scripts": { "postinstall": "cd node_modules/packet && cake compile" }
 }
