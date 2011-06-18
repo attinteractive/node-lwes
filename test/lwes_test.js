@@ -5,11 +5,11 @@ var vows = require('vows'),
 
 vows.describe('LWES').addBatch({
   'class generates instances': { //context
-    'when called with new': function (lwesClass) { //vow
+    'when called with new': function () { //vow
       var lwesObj = new LWES();
       assert.isObject(lwesObj);
     },  
-    'when called without new': function (logos) { //vow
+    'when called without new': function () { //vow
       var lwesObj = LWES();
       assert.isObject(lwesObj);
     }   
