@@ -1,6 +1,11 @@
 {   "name":             "lwes"
 ,   "version":          "0.0.1"
 ,   "author":           "Aaron Qian"
+,   "repository": { "type":   "git"
+                  , "url":    "https://github.com/aq1018/node-lwes.git" 
+    }
+,   "dependencies":     { "packet":"= 0.0.2" }
 ,   "directories":      { "lib" : "./lib" }
 ,   "main":             "./lib/lwes"
+,   "scripts": { "postinstall": "cd node_modules/packet && cake compile" }
 }
