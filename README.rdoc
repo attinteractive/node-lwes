@@ -13,9 +13,9 @@ LWES - Light Weight Event System library for nodejs. Currently we only support l
 === Installing lwes 
   [sudo] npm install lwes
 
-== Usage (see lwes_listener.js for full example)
+== Usage (see examples/lwes_listener.js for full example)
 
-  var LWES = require('./lib/lwes').LWES;
+  var LWES = require('lwes').LWES;
   var lwesObj = new LWES();
   var filteredEvents = ['EventTypeA', 'EventTypeB']
 
