@@ -1,6 +1,7 @@
 {   "name":             "lwes"
 ,   "version":          "0.0.1"
-,   "author":           "Aaron Qian"
+,   "author":           "Aaron Qian <aq1018@gmail.com> (http://aaronqian.com)"
+,   "contributors":     ["Sal Fuentes Jr. <fuentesjr@gmail.com> (http://about.me/salvador)"]
 ,   "repository": { "type":   "git"
                   , "url":    "https://github.com/aq1018/node-lwes.git" 
     }
