@@ -5,7 +5,9 @@
 ,   "repository":       { "type":   "git"
                         , "url":    "https://github.com/attinteractive/node-lwes.git"
     }
-,   "dependencies":     { "packet":"= 0.0.2" }
+,   "dependencies":     { "packet"  :   "https://github.com/aq1018/node-packet/tarball/0.0.3" }
+,   "devDependencies":  { "vows"    :   "*" }
 ,   "directories":      { "lib" : "./lib" }
 ,   "main":             "./lib/lwes"
+,   "scripts":          { "test" : "vows test/*.js" }
 }
