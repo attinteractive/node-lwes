@@ -1,0 +1,15 @@
+def set_options(opt):
+  opt.tool_options("compiler_cxx")
+
+def configure(conf):
+  conf.check_tool("compiler_cxx")
+  conf.check_tool("node_addon")
+  conf.check(lib='lwes', includes=['/usr/include', '/usr/local/include'], libpath=['/usr/lib', '/usr/local/lib'], uselib_store='LWES')
+
+
+def build(bld):
+  lwes = bld.new_task_gen("cxx", "shlib", "node_addon") 
+  lwes.cxxflags = ["-g", "-D_FILE_OFFSET_BITS=64", "-D_LARGEFILE_SOURCE", "-Wall", "-L/usr/local/lib", "-llwes"]
+  lwes.target = "parser"
+  lwes.includes = ' /usr/local/include/lwes-0 '
+  lwes.source = "parser.cc"
