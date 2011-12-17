@@ -7,6 +7,6 @@
 ,   "devDependencies":  { "vows"    :   "*" }
 ,   "directories":      { "lib" : "./lib" }
 ,   "main":             "./lib/lwes"
-,   "scripts":          { "postinstall": "cd lib/parser && node-waf configure build"
+,   "scripts":          { "postinstall": "cd lib/parser && ./build_lwes && node-waf configure build"
                         , "test" : "vows test/*.js" }
 }

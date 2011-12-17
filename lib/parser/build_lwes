@@ -1,0 +1,7 @@
+cd deps/lwes-0.23.1/
+
+./configure --enable-shared=no --enable-static=yes --disable-hardcore --prefix=`pwd`/..
+make
+make install
+
+cd ../..
