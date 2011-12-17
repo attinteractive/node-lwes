@@ -252,5 +252,5 @@ extern "C" {
     LwesParser::Init(target);
   }
 
-  NODE_MODULE(LwesParser, init);
+  NODE_MODULE(parser, init);
 }
