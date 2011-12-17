@@ -1,0 +1,3 @@
+[submodule "lib/parser/deps/lwes"]
+	path = lib/parser/deps/lwes
+	url = git://github.com/lwes/lwes.git
