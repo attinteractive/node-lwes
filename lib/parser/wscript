@@ -1,15 +1,26 @@
+import os
+
+cwd = os.getcwd()
+lwes_include_path = cwd + '/deps/include/lwes-0'
+lwes_lib_path = cwd + '/deps/lib'
+
+
 def set_options(opt):
   opt.tool_options("compiler_cxx")
 
 def configure(conf):
   conf.check_tool("compiler_cxx")
   conf.check_tool("node_addon")
-  conf.check(lib='lwes', includes=['deps/include/lwes-0'], libpath=['deps/lib'], uselib_store='LWES')
+
+
+  conf.check(lib='lwes', includes=[lwes_include_path], libpath=[lwes_lib_path], uselib_store='LWESC')
 
 
 def build(bld):
+  bld.env.append_value('LINKFLAGS', ['-llwes', "-L"+lwes_lib_path])
   lwes = bld.new_task_gen("cxx", "shlib", "node_addon")
-  lwes.cxxflags = ["-g", "-D_FILE_OFFSET_BITS=64", "-D_LARGEFILE_SOURCE", "-Wall", "-L/usr/local/lib", "-llwes"]
+  lwes.cxxflags = ["-g", "-fPIC", "-D_FILE_OFFSET_BITS=64", "-D_LARGEFILE_SOURCE", "-Wall", "-I"+lwes_include_path]
+  lwes.use = "LWESC"
+  lwes.add_obj_file
   lwes.target = "parser"
-  lwes.includes = './deps/include/lwes-0'
   lwes.source = "parser.cc"
